@@ -73,6 +73,10 @@ if st.button("Predict"):
     prob = metrics["model"].predict_proba(vectorized)[0][prediction]
     label = "Real News" if prediction == 0 else "Fake News"
     st.success(f"Prediction: {label} ({prob:.2f} confidence)")
+    precision = metrics["report"]["1"]["precision"]
+    recall = metrics["report"]["1"]["recall"]
+    st.write(f"Fake News Precision: {precision:.2f}")
+    st.write(f"Fake News Recall: {recall:.2f}")
 
 # Metrics section
 st.header("📊 Model Performance")
