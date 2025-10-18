@@ -26,8 +26,8 @@ def clean_text(text):
 # Load data
 @st.cache_data
 def load_data():
-    true_df = pd.read_csv('True_Sample.csv')
-    fake_df = pd.read_csv('Fake_Sample.csv')
+    true_df = pd.read_csv('https://github.com/raj4angular/fakenewsstreamlit/blob/main/True_Sample.csv')
+    fake_df = pd.read_csv('https://github.com/raj4angular/fakenewsstreamlit/blob/main/Fake_Sample.csv')
     true_df['label'] = 0
     fake_df['label'] = 1
     df = pd.concat([true_df, fake_df]).sample(frac=1).reset_index(drop=True)
